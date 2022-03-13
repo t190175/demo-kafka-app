@@ -21,7 +21,7 @@ COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
-COPY --from=0 /build/target/demo-kafka-app-0.0.1-SNAPSHOT.jar /app/target/demo-kafka-app-0.0.1-SNAPSHOT.jar
+COPY --from=0 /build/target/demo-0.0.1-SNAPSHOT.jar /app/target/demo-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8081
 ENTRYPOINT [ "java", "-jar", "/app/target/demo-0.0.1-SNAPSHOT.jar", "--server.port=8081" ]
