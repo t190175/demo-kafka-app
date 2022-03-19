@@ -22,7 +22,7 @@ RUN mvn package -Dmaven.test.skip=true
 
 FROM openjdk:11-jdk
 COPY --from=0 /build/target/demo-kafka-app-0.0.1-SNAPSHOT.jar /app/target/demo-kafka-app-0.0.1-SNAPSHOT.jar
-COPY --from=0 /dev-tools/certs/cluster-ca.crt /app/certs/cluster-ca.crt
+COPY --from=0 /src/main/resources/client-certs/cluster-ca.crt /app/certs/cluster-ca.crt
 
 EXPOSE 8082
 ENTRYPOINT [ "java", "-jar", "/app/target/demo-kafka-app-0.0.1-SNAPSHOT.jar", "--server.port=8082" ]
