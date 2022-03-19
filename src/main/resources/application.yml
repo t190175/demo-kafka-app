@@ -8,7 +8,8 @@ spring:
     bootstrap-servers: a2b0ba910d473425f9bff7f76b08084b-877566286.us-east-1.elb.amazonaws.com:9094
     ssl:
       trust-store-type: PEM
-      trust-store-location: classpath:/client-certs/cluster-ca.crt
+      trust-store-location: file:/app/certs/cluster-ca.crt
+      #trust-store-location: file:/dev-tools/certs/cluster-ca.crt
     producer:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
