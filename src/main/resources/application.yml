@@ -9,7 +9,7 @@ spring:
     ssl:
       trust-store-type: PEM
       trust-store-location: file:/app/certs/cluster-ca.crt
-      #trust-store-location: file:/dev-tools/certs/cluster-ca.crt
+      #trust-store-location: file:/projects/workspace/demo-kafka-app/src/main/resources/client-certs/cluster-ca.crt
     producer:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
